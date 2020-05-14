@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  # get 'cocktails/index'
-  # get 'cocktails/new'
-  # get 'cocktails/show'
-  resources :cocktails, only: [:index, :show, :new, :create]
+
+  get 'doses/new'
+  resources :cocktails, only: [:index, :show, :new, :create] do
+    resources :doses, only: [:new, :create]
+  end
+  resources :doses, only: [:destroy]
   # to nest doses later
 end
