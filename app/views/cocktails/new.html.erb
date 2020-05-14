@@ -2,9 +2,10 @@
 
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.input :name %>
-  <%= f.input :doses %>
-  <!-- ingredients -->
-  <%= f.submit %>
+  <%= f.association :doses %>
+  <%= f.association :ingredients %>
+  <!-- to read associations document -->
+  <%= f.button :submit %>
 <% end %>
 
 <!-- not completed -->

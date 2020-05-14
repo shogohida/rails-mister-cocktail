@@ -1,8 +1,9 @@
 <h1><%= @cocktail.name %></h1>
 
 <% @cocktail.doses.each do |dose| %>
-  <h3><%= dose.ingredient_id %></h3>
-  <!-- need to show ingredient name with ingredient_id -->
+  <h3><%= dose.ingredient.name %></h3>
+  <!-- could be written as @cocktail.ingredients too-->
+  <!-- wrong memo, need to show ingredient name with ingredient_id -->
   <p><%= dose.description %></p>
 <% end %>
 
