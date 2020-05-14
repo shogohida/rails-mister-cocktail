@@ -7,9 +7,11 @@ class DosesController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     # ingredient/description pair
-    @ingredient = Ingredient.find(params[:dose][:ingredient_id])
+    # @ingredient = Ingredient.find(params[:dose][:ingredient_id])
+    # it gives an error if no ingredient selected
     @dose = Dose.new(dose_params)
-    @dose.ingredient = @ingredient
+    # @dose.ingredient = @ingredient
+    # raise
     @dose.cocktail = @cocktail
     # raise
     if @dose.save
@@ -28,6 +30,7 @@ class DosesController < ApplicationController
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient)
+    params.require(:dose).permit(:description, :ingredient_id)
+    # always think about what to pass
   end
 end
