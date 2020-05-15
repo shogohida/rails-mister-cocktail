@@ -17,17 +17,20 @@
 
 <div class="card-product">
   <!--  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
-  <div class="card-product-infos">
-    <h2><%= @cocktail.name %></h2>
+  <div class="card-product-photo">
     <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-    <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.ingredient.name %></li>
-      <!-- could be written as @cocktail.ingredients too-->
-      <!-- wrong memo, need to show ingredient name with ingredient_id -->
-      <li><%= dose.description %></li>
+  </div>
+  <div class="card-product-infos">
+    <div class="card-product-description">
+      <h2><%= @cocktail.name %></h2>
+      <% @cocktail.doses.each do |dose| %>
+        <h4><%= dose.ingredient.name %></h4>
+        <!-- could be written as @cocktail.ingredients too-->
+        <p><%= dose.description %></p>
 
-      <p><%= link_to 'Delete', dose_path(dose), method: :delete %></p>
-    <% end %>
+        <p><%= link_to 'Delete', dose_path(dose), method: :delete %></p>
+      <% end %>
+    </div>
   </div>
 </div>
 
