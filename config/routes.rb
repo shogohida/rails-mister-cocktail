@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'doses/new'
+  get '/', to: 'cocktails#index'
+  # root, serach documentation
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [:new, :create]
   end
