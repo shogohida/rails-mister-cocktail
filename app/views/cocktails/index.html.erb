@@ -24,13 +24,15 @@
 <div class="container">
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> -->
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
          <%= link_to cocktail.name, cocktail_path(cocktail) %>
       </div>
-      <!-- No route matches {:action=>"show", :controller=>"cocktails", :id=>nil}, missing required keys: [:id] -->
     <% end %>
   </div>
 </div>
+
+<!-- <%= cl_image_tag("ohirnf317bfz6a0euoe6", width: 400, height: 300, crop: :fill) %> -->
 
 <!-- to change images -->
 <!-- to change link in card-category, color -->
