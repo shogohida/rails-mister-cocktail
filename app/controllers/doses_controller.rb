@@ -11,9 +11,7 @@ class DosesController < ApplicationController
     # it gives an error if no ingredient selected
     @dose = Dose.new(dose_params)
     # @dose.ingredient = @ingredient
-    # raise
     @dose.cocktail = @cocktail
-    # raise
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
