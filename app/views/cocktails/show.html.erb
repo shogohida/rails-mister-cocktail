@@ -24,7 +24,7 @@
     <div class="card-product-description">
       <h1><%= @cocktail.name %></h1>
       <% @cocktail.doses.each do |dose| %>
-        <h1>-made of  <%= dose.description %> of <%= dose.ingredient.name %> </h1>
+        <h1>-made of  <%= dose.description %> of <%= dose.ingredient_name %> </h1>
         <!-- could be written as @cocktail.ingredients too-->
         <p></p>
 
